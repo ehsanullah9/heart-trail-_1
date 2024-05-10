@@ -1,19 +1,16 @@
-const bodyEl = document.querySelector('body');
+const bodyEl = document.querySelector("body");
 
-console.log(bodyEl);
-
-
-bodyEl.addEventListener('mousemove' , (event)=>{
-        let offsetX = event.offsetX;
-        let offsetY = event.offsetY;
-        let span = create_span();
-        span.style.width = offsetX +  'px';
-        span.style.height=offsetY + 'px';
-        bodyEl.appendChild(span);
-})
-
-
-function create_span(){
-        let span = document.createElement('span');
-        return span ;
-}
+bodyEl.addEventListener("mousemove", (event) => {
+  const xpos = event.offsetX;
+  const ypos = event.offsetY;
+  const spanEl = document.createElement("span");
+  spanEl.style.left = xpos + "px";
+  spanEl.style.top = ypos + "px";
+  bodyEl.appendChild(spanEl);
+  const size = Math.random() * 100;
+  spanEl.style.width = size + "px";
+  spanEl.style.height = size + "px";
+  setTimeout(() => {
+    spanEl.remove();
+  }, 2000);
+});

@@ -2,17 +2,31 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    overflow: hidden;
 }
-body{
+body {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-span{
-    background-image: url('heart.png');
-    width: 20px;
-    height: 20px;
-   transform: translate(-50% , -50%);
-}
-
+    background-color: black;
+    overflow: hidden;
+  }
+  span {
+    position: absolute;
+    background: url(heart.png);
+    background-size: cover;
+    border-radius: 50px;
+    pointer-events: none;
+    animation: animat 4s linear;
+  }
+@keyframes animat {
+    0% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      filter: hue-rotate(0);
+    }
+    100% {
+      transform: translate(-50%, -5000%);
+      opacity: 1;
+      filter: hue-rotate(720deg);
+    }
+  }
+  
